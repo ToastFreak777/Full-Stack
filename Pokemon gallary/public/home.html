@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="home.css" />
+    <script defer src="./script.js"></script>
+    <title>Pokemon Api</title>
+  </head>
+  <body>
+    <header id="search-bar">
+      <form class="form hide">
+        <input type="text" id="search" placeholder="Search" />
+      </form>
+      <button id="search-btn"><i id="icon" class="fas fa-search"></i></button>
+    </header>
+    <main>
+      <div id="app" class="container">
+        <div for="item of images" class="card">
+          <div class="card-img">
+            <img class="picture" src="" alt="" />
+            <div class="circle">
+              <img
+                src="https://s.svgbox.net/files.svg?ic=sketch&fill=000"
+                width="32"
+                height="32"
+              />
+            </div>
+          </div>
+          <div class="card-action">
+            <div>
+              <div class="title">cardView</div>
+              <span class="types">...</span>
+            </div>
+            <div class="btn-download">
+              <button class="btn">Download</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
