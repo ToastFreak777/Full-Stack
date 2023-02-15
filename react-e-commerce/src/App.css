@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Merriweather&display=swap");
+
+:root {
+  --bg-color: #4e4da2;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  font-family: "Merriweather", serif;
+}
+
+body {
+}
+
+header {
+  background-image: url("https://img.freepik.com/free-photo/abstract-bokeh-blurred-lights-background_53876-127212.jpg?w=1380&t=st=1676410982~exp=1676411582~hmac=4066513989660e7241b024577f44f23319c124bba48e541ef2ba7a4e3d419359");
+  background-size: 100%;
+}
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem;
+}
+
+.featured {
+  display: flex;
+  /* outline: blue solid 5px; */
+  margin: 0rem 10%;
+  width: 80%;
+  height: 300px;
+}
+
+.featured .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.featured .image-container {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin: 20px auto;
+}
+
+.featured .content div {
+  margin: 1rem 2rem;
+}
+
+.featured .content .title {
+  font-size: 32px;
+}
+
+.featured .content .description {
+  grid-area: description;
+}
+
+.featured .content .actions {
+  grid-area: actions;
+}
+
+.featured .content .actions button {
+  margin: 0.2rem;
+  padding: 0.3rem;
+  border: 2px solid black;
+  background: inherit;
+}
+
+#dot1 {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 50%;
+  top: 300px;
+  left: 1300px;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+#products {
+  background: lightgray;
+}
+
+.product-container {
+  background: white;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  margin-top: 3rem;
+  width: 80%;
+}
+
+.product-container img {
+  max-width: 500px;
+  max-height: 350px;
+  width: 500px;
+  height: 350px;
+  margin-top: 1rem;
+  outline: rgb(206, 206, 206) outset 2px;
+}
+
+.product {
+  display: grid;
+  place-items: center;
+  margin: 1rem;
+}
+
+.product > * {
+  margin: 0.5rem;
+}
+
+.product #title {
+  font-size: 18px;
+}
+
+.product #price {
+  color: green;
+}
+
+.product button {
+  margin: 0rem 0.3rem;
+  padding: 0.5rem;
+  border: none;
+  background: black;
+  color: white;
+}
+
+.product #buy {
+  background: orange;
+}
+
+.product button:hover {
+  cursor: pointer;
+}
+
+#clearance {
+  display: flex;
+  justify-content: center;
+  height: 500px;
+  font-size: 22px;
+  color: white;
+  background: var(--bg-color);
+}
+
+#clearance div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 5rem;
+}
+
+#clearance .sale {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#clearance button {
+  border: none;
+  background: rgb(2, 177, 2);
+  cursor: pointer;
+  color: inherit;
+  width: 12rem;
+}
+
+#clearance button:hover {
+  background: black;
+  transition: ease-in 0.5s;
+}
+
+#clearance img {
+  padding: 2rem 0;
+}
+
+#reviews {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+#reviews div {
+  background: white;
+}
+
+#reviews div:first-child {
+  background: white;
+  text-align: center;
+}
+
+.reviews h3 {
+  text-align: center;
+}
+
+.horizontal-line {
+  border: 1px solid rgba(117, 245, 117, 0.459);
+  margin: 0.3rem 56rem;
+}
+
+.review-container {
+  padding: 1rem;
+  width: 80%;
+  margin: 1rem auto;
+}
+
+.review-container > * {
+  display: inline-block;
+  padding: 0.3rem;
+  margin: 0rem 30rem 2rem 30rem;
+}
+
+#dot2 {
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background: purple !important;
+  border-radius: 50%;
+  top: 6550px;
+  left: 300px;
+}
