@@ -43,6 +43,20 @@ export const StateContext = ({ children }) => {
     toast.success(`${qty} ${product.name} added to the cart.`);
   };
 
+  const onRemove = (product) => {
+    foundProduct = cartItems.find((item) => item._id === product._id);
+    const newCartItems = cartItems.filter((item) => item._id !== product._id);
+
+    setTotalPrice(
+      (prevTotalPrice) =>
+        prevTotalPrice - foundProduct.price * foundProduct.quantity
+    );
+    setTotalQuantities(
+      (prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity
+    );
+    setCartItems(newCartItems);
+  };
+
   const toggleCartItemQuanitity = (id, value) => {
     foundProduct = cartItems.find((item) => item._id === id);
     index = cartItems.findIndex((product) => product._id === id);
@@ -67,24 +81,10 @@ export const StateContext = ({ children }) => {
     }
   };
 
-  const onRemove = (product) => {
-    foundProduct = cartItems.find((item) => item._id === product._id);
-    const newCartItems = cartItems.filter((item) => item._id !== product._id);
-
-    setTotalPrice(
-      (prevTotalPrice) =>
-        prevTotalPrice - foundProduct.price * foundProduct.quantity
-    );
-    setTotalQuantities(
-      (prevTotalQuantities) => prevTotalQuantities - foundProduct.quantity
-    );
-    setCartItems(newCartItems);
-  };
-
   const incQty = () => setQty((prevQty) => prevQty + 1);
   const decQty = () =>
     setQty((prevQty) => {
-      if (prevQty <= 1) return 1;
+      if (prevQty - 1 < 1) return 1;
 
       return prevQty - 1;
     });
@@ -93,6 +93,7 @@ export const StateContext = ({ children }) => {
     <Context.Provider
       value={{
         showCart,
+        setShowCart,
         cartItems,
         totalPrice,
         totalQuantities,
@@ -100,10 +101,11 @@ export const StateContext = ({ children }) => {
         incQty,
         decQty,
         onAdd,
-        showCart,
-        setShowCart,
         toggleCartItemQuanitity,
         onRemove,
+        setCartItems,
+        setTotalPrice,
+        setTotalQuantities,
       }}
     >
       {children}
