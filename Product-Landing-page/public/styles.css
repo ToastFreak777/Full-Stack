@@ -1,0 +1,232 @@
+:root {
+  --button-color1: rgba(255, 200, 0, 1);
+  --shader1: rgba(25, 25, 25, 0.2);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+/* html {
+  color-scheme: dark light;
+} */
+
+body {
+  height: 100vh;
+}
+
+h3 {
+  font-size: 1.75em;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+a {
+  text-decoration: 0;
+  color: inherit;
+}
+
+i {
+  font-size: 3em;
+  width: 100px;
+  max-width: 100%;
+  text-align: center;
+  margin-right: 0.75em;
+  color: rgba(255, 127, 0, 1);
+  padding: 0.5em;
+}
+
+/* Header Start */
+header {
+  width: 100%;
+  height: max(10%, fit-content);
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.25em;
+  background-color: white;
+  z-index: 999;
+}
+
+header div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5em;
+}
+
+header div > img {
+  width: 100%;
+  height: 100%;
+  max-height: 5em;
+  object-fit: contain;
+  display: block;
+  margin-right: 1em;
+}
+
+header div > p {
+  width: 100%;
+  font-style: italic;
+}
+/* Navbar Start */
+header nav {
+  display: flex;
+  justify-content: space-evenly;
+  width: 800px;
+}
+/* Navbar End */
+/* Header End */
+
+main {
+  position: relative;
+  top: 10%;
+  max-width: 60%;
+  margin: auto;
+}
+
+main > div:first-of-type {
+  width: fit-content;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main > div:first-of-type input {
+  display: block;
+  margin: 10px 0;
+  padding: 5px;
+}
+
+main > div:first-of-type input[type="submit"] {
+  display: block;
+  margin: 0 auto;
+  background: var(--btn-color1, orange);
+  border: 0;
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+#features {
+  margin: 20px auto;
+  width: fit-content;
+}
+
+.desc {
+  display: inline-block;
+}
+
+#see-it-in-action {
+  width: max(500px, 60%);
+  height: 500px;
+  margin: 0 auto;
+}
+
+section iframe {
+  width: 100%;
+  height: 100%;
+}
+
+#platforms {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  place-items: center;
+  margin: 3em 0;
+}
+
+#platforms .platform {
+  border: 2px solid black;
+  border-radius: 5px;
+  width: 80%;
+  min-height: 320px;
+  font-size: 1.2em;
+}
+#platforms .platform > * {
+  text-align: center;
+  list-style: none;
+  padding: 0.5em 0;
+}
+#platforms .platform h4,
+#platforms .platform #price {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.platform h4 {
+  background-color: var(--shader1, lightgrey);
+  padding: 0.75em 0;
+}
+
+.platform ul > li {
+  padding: 0.25em;
+}
+
+.platform button {
+  display: block;
+  margin: auto;
+  width: max(100px, 50%);
+  background: var(--btn-color1, orange);
+  border: none;
+  margin-bottom: 1em;
+}
+
+footer {
+  position: relative;
+  top: 10%;
+  display: flex;
+  min-height: 5%;
+  max-width: 60%;
+  margin: auto;
+  background: var(--shader1, lightgrey);
+  flex-direction: column;
+  padding: 1em;
+}
+
+footer #links a {
+  font-size: 1em;
+  font-weight: bold;
+  padding: 1em 0em 1em 1em;
+}
+
+footer p,
+footer #links {
+  text-align: right;
+}
+
+footer p {
+  opacity: 0.7;
+}
+
+@media screen and (max-width: 950px) {
+  #platforms {
+    grid-auto-flow: row;
+    gap: 2em;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  header nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25em;
+  }
+
+  main,
+  footer {
+    top: 40%;
+  }
+}

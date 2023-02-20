@@ -1,121 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Landing Page</title>
-    <link href="./index.css" rel="stylesheet">
-    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <div id="page-wrapper">
-        <header id="header">
-            <div class="logo">
-                <img id="header-img" src="https://www.logodesign.net/images/illustration-logo.png"
-                    alt="Elden Warrior" />
-            </div>
-
-            <nav id="nav-bar">
-                <ul>
-                    <li><a class="nav-link" href="#features">Features</a></li>
-                    <li><a class="nav-link" href="#see-it-in-action">Trailer</a></li>
-                    <li><a class="nav-link" href=#platform>Platforms</a></li>
-                </ul>
-            </nav>
-        </header>
-
-        <div class="container"></div>
-
-        <section id="hero">
-            <h2>Join the Community!</h2>
-            <form id="form" action="https://www.freecodecamp.com/email-submit">
-                <input id="email" name="email" placeholder="Enter your email address" type="email" validation
-                    required />
-                <input id="submit" type="submit" value="Get Started " class="btn" />
-            </form>
-        </section>
-
-        <div class="container">
-            <section id="features">
-                <div class="grid">
-                    <div class="icon"><i class="fa-solid fa-eye"></i></div>
-                    <div class="desc">
-                        <h2>Experience A Challenge like no other</h2>
-                        <p>Are you a fan of a challenging yet rewarding game? Then look no farther as this is the
-                            game
-                            for you!</p>
-                    </div>
-                </div>
-                <div class="grid">
-                    <div class="icon"><i class="fa-solid fa-horse-head"></i></div>
-                    <div class="desc">
-                        <h2>Explore A Huge Map On Horseback</h2>
-                        <p>New to the Dark Souls franchise, the game has added the addition of horseback riding as well
-                            as enormously increasing the size of the map</p>
-                    </div>
-                </div>
-                <div class="grid">
-                    <div class="icon"><i class="fa-solid fa-cloud-moon-rain"></i></div>
-                    <div class="desc">
-                        <h2>All New Dynamic Weather & Day/Night Cycle</h2>
-                        <p>Yet another great addition to the game is its dynamic weather and
-                            its day and night cycle
-                        </p>
-                    </div>
-                </div>
-            </section>
-            <section id="see-it-in-action">
-                <iframe id="video" height="315" src="https://www.youtube.com/embed/OT8if6DXOFQ"
-                    title="Elden Ring Trailer" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowfullscreen></iframe>
-            </section>
-            <section id="platform">
-                <div class="product" id="ps5">
-                    <div class="title">Playstation</div>
-                    <h2>$59.99</h2>
-                    <ol>
-                        <li>PS PLus required for online play</li>
-                        <li>Supports up to 4 online players with PS Plus</li>
-                        <li>1 player</li>
-                    </ol>
-                    <button class="btn">SELECT</button>
-                </div>
-                <div class="product" id="xbox">
-                    <div class="title">Microsoft</div>
-                    <h2>$79.99</h2>
-                    <ol>
-                        <li>Mature 17+</li>
-                        <li>Action RPG</li>
-                        <li>Xbox Live Gold required for online play</li>
-                    </ol>
-                    <button class="btn">SELECT</button>
-                </div>
-                <div class="product" id="pc">
-                    <div class="title">Pc</div>
-                    <h2>$59.99</h2>
-                    <ol>
-                        <li>Single player/li>
-                        <li>Online PvP</li>
-                        <li>Steam Achievements</li>
-                    </ol>
-                    <button class="btn">SELECT</button>
-                </div>
-            </section>
-            <footer id='footer'>
-                <ul>
-                    <li><a href="#">Author</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Terms</a></li>
-                </ul>
-                <span>Copyright: &copy; 2022, ToastFreak777</span>
-            </footer>
-        </div>
+  <header id="header">
+    <div>
+      <img id="header-img" src="https://static.thenounproject.com/png/56772-200.png" alt="Elden Warrior" />
+      <p>Elden Ring</p>
     </div>
-</body>
 
+    <nav id="nav-bar">
+      <a class="nav-link" href="#features">Features</a>
+      <a class="nav-link" href="#see-it-in-action">Trailer</a>
+      <a class="nav-link" href="#platforms">Platforms</a>
+    </nav>
+  </header>
+
+  <main>
+    <div>
+      <h3>Join The Community!</h3>
+      <form id='form' method='POST' action='https://www.freecodecamp.com/email-submit'>
+        <input id='email' name='email' type='email' placeholder='Enter your email address' required />
+        <input id='submit' type='submit' value='GET STARTED' />
+      </form>
+    </div>
+
+    <section id='features'>
+      <div class='feature'>
+        <i class="fa-solid fa-fire-flame-curved"></i>
+        <div class='desc'>
+          <h3>Experience A Challenge like no other</h3>
+          <p>Are you a fan of a challenging yet rewarding game? Then look no
+            farther as this is the game for you!</p>
+        </div>
+      </div>
+      <div class='feature'>
+        <i class="fa-solid fa-horse-head"></i>
+        <div class='desc'>
+          <h3>Explore A Huge Map On Horseback</h3>
+          <p>New to the Dark Souls franchise, the game has added the addition
+            of horseback riding as well as enormously increasing the size of
+            the map</p>
+        </div>
+        <div class='feature'>
+          <i class="fa-solid fa-cloud-sun"></i>
+          <div class='desc'>
+            <h3>All New Dynamic Weather & Day/Night Cycle</h3>
+            <p>Yet another great addition to the game is its dynamic weather
+              and its day and night cycle</p>
+          </div>
+        </div>
+    </section>
+
+    <section id='see-it-in-action'>
+      <iframe id="video" src="https://www.youtube.com/embed/OT8if6DXOFQ" title="Elden Ring Trailer"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </section>
+
+    <section id='platforms'>
+      <div class='platform'>
+        <h4>Playstation</h4>
+        <p id='price'>$59.99</p>
+        <ul>
+          <li>PS Plus required for online play</li>
+          <li>Supports up to 4 online players with PS Plus</li>
+          <li>1 player</li>
+        </ul>
+        <button>SELECT</button>
+      </div>
+      <div class='platform'>
+        <h4>Xbox</h4>
+        <p id='price'>$79.99</p>
+        <ul>
+          <li>Mature 17+</li>
+          <li>Action RPG</li>
+          <li>Xbox Live Gold required for online play</li>
+        </ul>
+        <button>SELECT</button>
+      </div>
+      <div class='platform'>
+        <h4>Pc</h4>
+        <p id='price'>$59.99</p>
+        <ul>
+          <li>Single player</li>
+          <li>Online PvP</li>
+          <li>Steam Achievements</li>
+        </ul>
+        <button>SELECT</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div id='links'>
+      <a href='#'>Privacy</a>
+      <a href='#'>Terms</a>
+      <a href='#'>Contact</a>
+    </div>
+    <p id='copyright'>Copyright: &copy 2023, ToastFreak</p>
+  </footer>
+
+  <script src="https://kit.fontawesome.com/bcab42ed12.js" crossorigin="anonymous"></script>
+</body>
 </html>
