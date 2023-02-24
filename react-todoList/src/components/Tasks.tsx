@@ -1,56 +1,66 @@
+import { useContext } from "react";
+// Icons
 import { FaTrash } from "react-icons/fa";
 import { AiOutlineCheck } from "react-icons/ai";
-
 // Styles
 import "./Tasks.styles.css";
-
-type Task = {
+//Context
+import { TodoContext } from "../Context";
+// Hooks
+import { useTaskFetch } from "../hooks/useTaskFetch";
+// Types
+export type Task = {
   title: string;
   completed: boolean;
 };
 
-type Tasks = Task[];
-
-type Props = {
-  tasks: Tasks;
-  setTasks: React.Dispatch<React.SetStateAction<Tasks>>;
+export type Props = {
+  tasks: Task[];
+  setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
 };
 
-const Tasks: React.FC<Props> = ({ tasks, setTasks }) => (
-  <div className="tasks">
-    {tasks.length > 0 ? (
-      tasks.map((task, i) => (
-        <div
-          className={task.completed ? "wrapper completed" : "wrapper active"}
-          key={i}
-        >
-          <p className="title">{task.title}</p>
-          <div>
-            <button
-              className="check square"
-              onClick={() => {
-                task.completed = !task.completed;
-                setTasks([...tasks]);
-              }}
-            >
-              <AiOutlineCheck />
-            </button>
-            <button
-              className="delete square"
-              onClick={() => {
-                const newTasks = tasks.filter((t) => t.title !== task.title);
-                setTasks(newTasks);
-              }}
-            >
-              <FaTrash />
-            </button>
+const Tasks: React.FC = () => {
+  useTaskFetch("");
+  const { tasks, setTasks } = useContext(TodoContext);
+
+  return (
+    <div className="tasks">
+      {tasks?.length > 0 ? (
+        tasks.map((task: Task, i: number) => (
+          <div
+            className={task.completed ? "wrapper completed" : "wrapper active"}
+            key={i}
+          >
+            <p className="title">{task.title}</p>
+            <div>
+              <button
+                className="check square"
+                onClick={() => {
+                  task.completed = !task.completed;
+                  setTasks([...tasks]);
+                }}
+              >
+                <AiOutlineCheck />
+              </button>
+              <button
+                className="delete square"
+                onClick={() => {
+                  const newTasks = tasks.filter(
+                    (t: Task) => t.title !== task.title
+                  );
+                  setTasks(newTasks);
+                }}
+              >
+                <FaTrash />
+              </button>
+            </div>
           </div>
-        </div>
-      ))
-    ) : (
-      <h2>No Task...</h2>
-    )}
-  </div>
-);
+        ))
+      ) : (
+        <h2>No Task...</h2>
+      )}
+    </div>
+  );
+};
 
 export default Tasks;

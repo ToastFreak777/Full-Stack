@@ -48,61 +48,6 @@ body {
   color: white;
 }
 
-form {
-  width: 100%;
-  margin-bottom: 20px;
-  display: flex;
-}
-
-form label {
-  margin-right: 15px;
-  border: 2px solid black;
-  width: 70%;
-  background: white;
-  display: flex;
-  justify-content: space-between;
-}
-
-form div {
-  width: 30%;
-  display: flex;
-  align-items: center;
-}
-
-form :is(button, input) {
-  background: transparent;
-  outline: none;
-  border: none;
-}
-
-form input {
-  padding: 5px;
-  font-size: 1.5rem;
-  min-height: 50px;
-}
-
-form input::placeholder {
-  color: grey;
-}
-
-form div select {
-  width: 100%;
-  min-height: 45px;
-  color: rgb(165, 94, 158);
-  padding: 5px;
-}
-
-form .plus {
-  font-size: 2rem;
-  margin-right: 5px;
-  color: purple;
-  border-radius: 20px;
-}
-
-form .plus:hover {
-  cursor: pointer;
-}
-
 h2 {
   color: white;
 }

@@ -23,9 +23,9 @@ Since this project was just for working with react it doesn't use a database or 
 - **Delete Task**
   ![delete-one-task](/assets/md/todoList/delete-one.png)
   ![delete-all](/assets/md/todoList/delete-all.png)
+- Uses local storage to save users tasks
 
 ### Future Additions
 
 - Update Task
 - Filter Task
-- database / local storage to persist data
