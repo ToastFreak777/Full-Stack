@@ -11,7 +11,7 @@
 ---
 
 This is a simple todo list react app. users can currently add new tasks and delete existing tasks.
-Since this project was just for working with react it doesn't use a database or any other tools such as localstorage so the user changes are not saved. Persiting tasks data may be implemented in the furute
+Since this project was just for working with react it doesn't use a database or any other tools such as localstorage so the user changes are not saved. Persisting tasks data may be implemented in the furute
 
 ### Functionality
 
