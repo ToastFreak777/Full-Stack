@@ -1,7 +1,3 @@
-import React, { useState, useContext } from "react";
-
-// Icons
-
 // Components
 import Tasks from "./components/Tasks";
 import CreateTask from "./components/CreateTask";

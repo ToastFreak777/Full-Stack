@@ -1,26 +1,18 @@
 import { createContext, ReactNode, useState } from "react";
 
-import { dummyData } from "./data";
-
 export const TodoContext = createContext<any>(null);
-
-// Types
-import { Task } from "./components/Tasks";
 
 type Props = {
   children: ReactNode;
 };
 
-// type states = {
-//   tasks: Task[];
-//   setTasks: React.Dispatch<React.SetStateAction<Task[]>>;
-//   input: string;
-//   setInput: React.Dispatch<React.SetStateAction<string>>;
-// };
+const fetchTasks = () => {
+  const data = localStorage.getItem("todoList");
+  return data ? JSON.parse(data) : [];
+};
 
 export const ContextProvider: React.FC<Props> = ({ children }) => {
-  // const [tasks, setTasks] = useState(dummyData);
-  const [tasks, setTasks] = useState();
+  const [tasks, setTasks] = useState(fetchTasks());
   const [input, setInput] = useState("");
 
   return (

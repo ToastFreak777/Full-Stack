@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 // Icons
 import { FaTrash } from "react-icons/fa";
 import { AiOutlineCheck } from "react-icons/ai";
@@ -6,8 +6,6 @@ import { AiOutlineCheck } from "react-icons/ai";
 import "./Tasks.styles.css";
 //Context
 import { TodoContext } from "../Context";
-// Hooks
-import { useTaskFetch } from "../hooks/useTaskFetch";
 // Types
 export type Task = {
   title: string;
@@ -20,12 +18,16 @@ export type Props = {
 };
 
 const Tasks: React.FC = () => {
-  useTaskFetch("");
   const { tasks, setTasks } = useContext(TodoContext);
+
+  // Write to localStorage
+  useEffect(() => {
+    localStorage.setItem("todoList", JSON.stringify(tasks));
+  }, [tasks]);
 
   return (
     <div className="tasks">
-      {tasks?.length > 0 ? (
+      {tasks.length > 0 ? (
         tasks.map((task: Task, i: number) => (
           <div
             className={task.completed ? "wrapper completed" : "wrapper active"}
