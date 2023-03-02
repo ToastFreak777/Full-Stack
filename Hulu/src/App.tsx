@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.module.sass";
 
 import Header from "./components/Header";

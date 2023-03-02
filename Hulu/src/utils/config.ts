@@ -1,5 +1,5 @@
-export const API_KEY = import.meta.env.VITE_API_KEY;
-export const API_URL = `https://api.themoviedb.org/3/`;
+export const API_KEY: string = import.meta.env.VITE_API_KEY;
+export const API_URL: string = `https://api.themoviedb.org/3/`;
 
 export const LATEST_BASE_URL: string = `${API_URL}movie/latest?api_key=${API_KEY}&language=en-US`;
 export const NOW_PLAYING_BASE_URL: string = `${API_URL}movie/now_playing?api_key=${API_KEY}&language=en-US`;

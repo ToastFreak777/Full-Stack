@@ -16,10 +16,11 @@ import {
   updateOffset,
 } from "../context/movieSlice";
 // Redux
+import { MovieSliceState } from "../context/movieSlice";
 
 const List = () => {
-  const { moviesList } = useSelector((state) => state.movies);
-  const { maxImages } = useSelector((state) => state.movies);
+  const { moviesList } = useSelector((state: MovieSliceState) => state.movies);
+  const { maxImages } = useSelector((state: MovieSliceState) => state.movies);
   const dispatch = useDispatch();
 
   useEffect(() => {

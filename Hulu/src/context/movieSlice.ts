@@ -1,9 +1,26 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+import { MoviesWithDates } from "../utils/API";
+
+type MovieCategory = MoviesWithDates & { count: number; offset: number };
+
+export type InitialState = {
+  moviesList: {
+    nowPlaying: MovieCategory;
+    popular: MovieCategory;
+    topRated: MovieCategory;
+  };
+  maxImages: number;
+};
+
+export type MovieSliceState = {
+  movies: InitialState;
+};
+
+const initialState: InitialState = {
   moviesList: {
     nowPlaying: {
-      dates: {},
+      dates: { maximum: "", minimum: "" },
       page: 0,
       results: [],
       total_pages: 0,
@@ -12,7 +29,7 @@ const initialState = {
       offset: 0,
     },
     popular: {
-      dates: {},
+      dates: { maximum: "", minimum: "" },
       page: 0,
       results: [],
       total_pages: 0,
@@ -21,7 +38,7 @@ const initialState = {
       offset: 0,
     },
     topRated: {
-      dates: {},
+      dates: { maximum: "", minimum: "" },
       page: 0,
       results: [],
       total_pages: 0,
@@ -81,7 +98,6 @@ export const {
   updateTopRated,
   updateMaxImages,
   updateOffset,
-  updateCount,
 } = movieSlice.actions;
 
 export default movieSlice.reducer;

@@ -1,6 +1,6 @@
 import classes from "./Navbar.module.sass";
 
-const Navbar = () => {
+const Navbar: React.FC = () => {
   return (
     <nav>
       <div className={classes.item}>Home</div>
