@@ -1,0 +1,49 @@
+.App
+    background: darkgray
+    height: 100%
+
+    main
+        transition: filter 200ms linear
+
+        .news
+            display: flex
+            justify-content: center
+            text-align: center
+            background-color: #f5f5f7
+            padding: 10px
+            margin-top: 50px
+
+            span:first-of-type
+                display: flex
+                align-items: center
+                letter-spacing: -.02em
+                color: rgba(5, 2, 2, 0.8)
+                font-weight: 500
+
+                a
+                    text-decoration: none
+                    color: blue
+
+                    &:hover
+                        text-decoration: underline
+
+                .arrow
+                    color: #3c89d6
+
+                    svg
+                        padding-left: 2px
+                        font-size: .9em
+
+    .grid_container
+        background: white
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 10px
+        margin: 20px
+
+    .slider
+        height: 700px
+        width: 100%
+        display: flex
+        gap: 30px
+        overflow: hidden
