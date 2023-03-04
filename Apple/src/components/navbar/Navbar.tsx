@@ -5,8 +5,14 @@ import SearchIcon from "@mui/icons-material/Search";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 
 import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux/es/exports";
 
 import Tab from "./Tab";
+import {
+  changeTab,
+  ToggleDropDown,
+  updateTabContent,
+} from "../../context/navbarSlice";
 
 type Props = {
   setBlur: React.Dispatch<React.SetStateAction<string>>;
@@ -14,27 +20,33 @@ type Props = {
 
 const Navbar: React.FC<Props> = ({ setBlur }) => {
   const [headerHeight, setHeaderHeight] = useState("50px");
-  const [toggle, setToggle] = useState("none");
-  const [tab, setTab] = useState("");
-  const [content, setContent] = useState("");
 
-  const openDropDown = (e) => {
-    setTab(e.target.dataset.name);
+  const { toggle, tab, tabContent } = useSelector((state) => state.navbar);
+  const dispatch = useDispatch();
+
+  const openDropDown = (e: click) => {
+    dispatch(changeTab(e.currentTarget.dataset.name));
     setHeaderHeight("50vh");
-    setToggle("block");
+    dispatch(ToggleDropDown("block"));
     setBlur("10px");
+
+    const header = document.querySelector(`.${styles.header}`);
+    header.style.backgroundColor = "#161617";
   };
-  const closeDropDown = (e) => {
-    setTab("");
-    setContent("");
+  const closeDropDown = () => {
+    dispatch(changeTab(""));
+    dispatch(updateTabContent(""));
     setHeaderHeight("50px");
-    setToggle("none");
+    dispatch(ToggleDropDown("none"));
     setBlur("0px");
+
+    const header = document.querySelector(`.${styles.header}`);
+    header.style.backgroundColor = "#434344";
   };
 
   useEffect(() => {
     const delayId = setTimeout(() => {
-      setContent(tab);
+      dispatch(updateTabContent(tab));
     }, 200);
 
     return () => {
@@ -55,73 +67,100 @@ const Navbar: React.FC<Props> = ({ setBlur }) => {
               <AppleIcon className={styles.logo} />
             </a>
           </div>
-          <div className={styles.navItem} onMouseEnter={openDropDown}>
-            <a href="/" data-name="Store">
-              Store
-            </a>
+          <div
+            className={styles.navItem}
+            onMouseEnter={openDropDown}
+            data-name="Store"
+          >
+            <a href="/">Store</a>
           </div>
-          <div className={styles.navItem} onMouseEnter={openDropDown}>
-            <a href="/" data-name="Mac">
-              Mac
-            </a>
+          <div
+            className={styles.navItem}
+            onMouseEnter={openDropDown}
+            data-name="Mac"
+          >
+            <a href="/">Mac</a>
           </div>
-          <div className={styles.navItem} onMouseEnter={openDropDown}>
-            <a href="/" data-name="iPad">
-              iPad
-            </a>
+          <div
+            className={styles.navItem}
+            onMouseEnter={openDropDown}
+            data-name="iPad"
+          >
+            <a href="/">iPad</a>
           </div>
-          <div className={styles.navItem} onMouseEnter={openDropDown}>
-            <a href="/" data-name="iPhone">
-              iPhone
-            </a>
+          <div
+            className={styles.navItem}
+            onMouseEnter={openDropDown}
+            data-name="iPhone"
+          >
+            <a href="/">iPhone</a>
           </div>
-          <div className={styles.navItem} onMouseEnter={openDropDown}>
-            <a href="/" data-name="Watch">
-              Watch
-            </a>
+          <div
+            className={styles.navItem}
+            onMouseEnter={openDropDown}
+            data-name="Watch"
+          >
+            <a href="/">Watch</a>
           </div>
-          <div className={styles.navItem} onMouseEnter={openDropDown}>
-            <a href="/" data-name="AirPods">
-              AirPods
-            </a>
+          <div
+            className={styles.navItem}
+            onMouseEnter={openDropDown}
+            data-name="AirPods"
+          >
+            <a href="/">AirPods</a>
           </div>
-          <div className={styles.navItem} onMouseEnter={openDropDown}>
-            <a href="/" data-name="Tv & Home">
-              Tv & Home
-            </a>
+          <div
+            className={styles.navItem}
+            onMouseEnter={openDropDown}
+            data-name="Tv & Home"
+          >
+            <a href="/">Tv & Home</a>
           </div>
-          <div className={styles.navItem} onMouseEnter={openDropDown}>
-            <a href="/" data-name="Entertainment">
-              Entertainment
-            </a>
+          <div
+            className={styles.navItem}
+            onMouseEnter={openDropDown}
+            data-name="Entertainment"
+          >
+            <a href="/">Entertainment</a>
           </div>
-          <div className={styles.navItem} onMouseEnter={openDropDown}>
-            <a href="/" data-name="Accessories">
-              Accessories
-            </a>
+          <div
+            className={styles.navItem}
+            data-name="Accessories"
+            onMouseEnter={openDropDown}
+          >
+            <a href="/">Accessories</a>
           </div>
-          <div className={styles.navItem} onMouseEnter={openDropDown}>
-            <a href="/" data-name="Support">
-              Support
-            </a>
+          <div
+            className={styles.navItem}
+            data-name="Support"
+            onMouseEnter={openDropDown}
+          >
+            <a href="/">Support</a>
           </div>
-          <div className={styles.navItem}>
-            <SearchIcon
-              className={styles.icon}
-              data-name="Searhbar"
-              onClick={openDropDown}
-            />
+          <div
+            className={styles.navItem}
+            data-name="Searchbar"
+            onClick={openDropDown}
+            onMouseEnter={(e) => {
+              if (toggle.valueOf("block") && tab !== "Searchbar")
+                closeDropDown();
+            }}
+          >
+            <SearchIcon className={styles.icon} />
           </div>
-          <div className={styles.navItem}>
-            <WorkOutlineIcon
-              className={styles.icon}
-              data-name="Shopping cart bag"
-              onClick={openDropDown}
-            />
+          <div
+            className={styles.navItem}
+            data-name="Bag"
+            onClick={openDropDown}
+            onMouseEnter={(e) => {
+              if (toggle.valueOf("block") && tab !== "Bag") closeDropDown();
+            }}
+          >
+            <WorkOutlineIcon className={styles.icon} />
           </div>
         </nav>
         <div className={styles.tabs} style={{ display: toggle }}>
-          <Tab type={content} />
+          <Tab type={tabContent} />
         </div>
       </div>
     </header>

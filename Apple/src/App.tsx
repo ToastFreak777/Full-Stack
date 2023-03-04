@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./App.module.sass";
 
-import { Navbar, Banner, Gallery } from "./components";
+import { Navbar, Banner, Gallery, Footer } from "./components";
 
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
@@ -97,7 +97,7 @@ const App = () => {
         </div>
         <section className={styles.slider}>{/* <Gallery /> */}</section>
       </main>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };

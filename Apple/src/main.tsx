@@ -4,8 +4,13 @@ import App from "./App";
 
 import "./index.sass";
 
+import { Provider } from "react-redux";
+import store from "./context/store";
+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );

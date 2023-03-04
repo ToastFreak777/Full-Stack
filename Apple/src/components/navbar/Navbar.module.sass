@@ -7,10 +7,9 @@
     overflow: hidden
     z-index: 100
 
-    transition: height 200ms linear
-
-    &:hover
-        transition: height 200ms linear
+    transition-property: height, background-color
+    transition-duration: 200ms
+    transition-timing-function: linear
 
     .container
         height: 100%
@@ -34,6 +33,20 @@
             a
                 text-decoration: none
                 color: inherit
+
+            .navItem
+                width: fit-content
+                height: fit-content
+
+                .icon
+                    // pointer-events: none
+                    height: 1.05em
+                    display: flex
+                    align-items: center
+                    justify-content: center
+
+                .icon:hover
+                    cursor: pointer
 
         .tabs
             display: flex
