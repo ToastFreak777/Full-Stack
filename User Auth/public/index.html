@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Auth</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <form action="" class="form-container">
+      <h2 class="form-header">Sign In</h2>
+      <fieldset class="container">
+        <label for="username" class="wrapper">
+          <i class="fa-regular fa-user"></i>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
+          />
+        </label>
+        <label for="password" class="wrapper">
+          <div>
+            <i class="fa-solid fa-lock"></i>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="abc123"
+            />
+          </div>
+          <button type="button" id="show-pass">
+            <i class="fa-regular fa-eye-slash"></i>
+          </button>
+        </label>
+        <div id="remember">
+          <label for="remember-me">
+            <div>
+              <input type="checkbox" name="remember-me" id="remember-me" />
+              <p>Remember Me</p>
+            </div>
+            <p>Forgot Password?</p>
+          </label>
+        </div>
+      </fieldset>
+      <button type="submit">Sign In</button>
+      <div class="underline">
+        <div class="left"></div>
+        <p>or</p>
+        <div class="right"></div>
+      </div>
+      <div class="social-media">
+        <a href="/"><i class="fa-brands fa-square-facebook"></i></a>
+        <a href="/"><i class="fa-brands fa-square-google-plus"></i></a>
+        <a href="/"><i class="fa-brands fa-square-twitter"></i></a>
+      </div>
+      <p>Don't Have An Account? <a href="/">Create New One</a></p>
+    </form>
+
+    <script
+      src="https://kit.fontawesome.com/bcab42ed12.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const showPassword = document.querySelector("#show-pass");
+      const passwordField = document.querySelector("input[type=password]");
+
+      showPassword.addEventListener("click", () => {
+        if (passwordField.getAttribute("type") === "password")
+          passwordField.setAttribute("type", "text");
+        else passwordField.setAttribute("type", "password");
+      });
+    </script>
+  </body>
+</html>

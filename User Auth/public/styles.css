@@ -1,0 +1,174 @@
+:root {
+  --primar-color: hsl(232deg 22% 50%);
+  --primary-bg-color: hsl(233deg 35% 19%);
+  --accent-color: hsl(146deg 58% 53%);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  font-family: sans-serif;
+  color: inherit;
+}
+
+body {
+  height: 100vh;
+  background-color: hsl(232deg 28% 28%);
+  color: var(--primar-color);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input:focus {
+  outline: none;
+}
+input::placeholder {
+  color: inherit;
+}
+
+.social-media {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 70px;
+}
+.social-media i {
+  color: white;
+  font-size: 3em;
+  clip-path: circle(45%);
+}
+
+button[type="submit"] {
+  margin: 20px 0;
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  background-color: var(--accent-color);
+  border: none;
+  font-weight: 500;
+  font-size: 1.2em;
+  color: black;
+}
+
+.form-container {
+  width: 500px;
+  height: 80%;
+  border-radius: 20px;
+  padding: 40px;
+  background-color: var(--primary-bg-color);
+  overflow: auto;
+  position: relative;
+}
+
+.form-container .form-header {
+  color: white;
+}
+
+.form-container fieldset.container {
+  border: none;
+}
+
+fieldset.container .wrapper {
+  background-color: hsl(233deg 32% 21%);
+  display: block;
+  margin: 30px 0;
+  border-radius: 20px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+fieldset.container .wrapper:nth-of-type(2) {
+  display: flex;
+  justify-content: space-between;
+}
+
+fieldset.container .wrapper button {
+  margin-right: 20px;
+  border: none;
+  background-color: inherit;
+}
+
+.wrapper input {
+  background-color: inherit;
+  border: none;
+  margin-left: 10px;
+  width: 80%;
+}
+
+.wrapper div {
+  width: 100%;
+}
+
+fieldset.container #remember {
+}
+
+fieldset.container #remember label {
+  display: flex;
+  justify-content: space-between;
+}
+
+fieldset.container #remember label div {
+  position: relative;
+  display: inline-flex;
+  gap: 5px;
+}
+
+fieldset.container #remember label div #remember-me:checked::after {
+  content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');
+  display: block;
+  position: absolute;
+  top: 2px;
+  left: 0;
+  background-color: var(--accent-color);
+  height: 15px;
+  border-radius: 2px;
+}
+
+.form-container > p:last-of-type {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 50px 0;
+}
+
+.form-container .underline {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  position: relative;
+  margin-top: 20px;
+}
+
+.form-container .underline :is(.left, .right) {
+  border-bottom: 1px solid hsl(232deg, 22%, 25%);
+  width: 100%;
+  height: 2px;
+  /* position: absolute; */
+}
+.form-container .underline p {
+  position: absolute;
+  top: -8px;
+}
+
+.form-container > p {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+}
+.form-container p a {
+  color: var(--accent-color);
+  text-decoration: none;
+  margin-left: 5px;
+}

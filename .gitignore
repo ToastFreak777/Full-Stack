@@ -1,4 +1,6 @@
 .vscode
 
 node_modules
-nextjs-ecommerce/README.md
+
+# Config files
+.env
