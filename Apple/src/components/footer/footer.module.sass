@@ -57,11 +57,15 @@
             justify-content: space-between
             align-items: center
             padding: 5px 0
+            font-size: .9em
 
             div
                 display: flex
                 justify-content: center
                 align-items: center
-                p
+
+                :not(p:first-of-type)
                     border-left: 1px solid black
-                    padding: 0 5px
+
+                p
+                    padding: 0 10px

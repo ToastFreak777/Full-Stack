@@ -5,7 +5,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import WorkOutlineIcon from "@mui/icons-material/WorkOutline";
 
 import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux/es/exports";
+import { useSelector, useDispatch } from "react-redux";
 
 import Tab from "./Tab";
 import {
@@ -24,7 +24,7 @@ const Navbar: React.FC<Props> = ({ setBlur }) => {
   const { toggle, tab, tabContent } = useSelector((state) => state.navbar);
   const dispatch = useDispatch();
 
-  const openDropDown = (e: click) => {
+  const openDropDown = (e) => {
     dispatch(changeTab(e.currentTarget.dataset.name));
     setHeaderHeight("50vh");
     dispatch(ToggleDropDown("block"));

@@ -95,7 +95,7 @@ const App = () => {
             logo="CardLogo"
           />
         </div>
-        <section className={styles.slider}>{/* <Gallery /> */}</section>
+        <Gallery />
       </main>
       <Footer />
     </div>
