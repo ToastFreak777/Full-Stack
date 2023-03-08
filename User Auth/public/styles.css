@@ -27,11 +27,23 @@ body {
   align-items: center;
 }
 
+input:is([type="text"], [type="password"]) {
+  width: 80%;
+  height: 100%;
+  background-color: inherit;
+  border: none;
+}
+
 input:focus {
   outline: none;
 }
 input::placeholder {
   color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .social-media {
@@ -56,6 +68,10 @@ button[type="submit"] {
   font-weight: 500;
   font-size: 1.2em;
   color: black;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .form-container {
@@ -99,17 +115,12 @@ fieldset.container .wrapper button {
 }
 
 .wrapper input {
-  background-color: inherit;
-  border: none;
   margin-left: 10px;
-  width: 80%;
 }
 
 .wrapper div {
   width: 100%;
-}
-
-fieldset.container #remember {
+  height: 100%;
 }
 
 fieldset.container #remember label {
@@ -117,13 +128,21 @@ fieldset.container #remember label {
   justify-content: space-between;
 }
 
-fieldset.container #remember label div {
+fieldset.container :is(#remember, #terms) label div {
   position: relative;
   display: inline-flex;
   gap: 5px;
 }
 
-fieldset.container #remember label div #remember-me:checked::after {
+fieldset.container #terms label div p {
+  font-size: 0.87em;
+}
+
+fieldset.container
+  :is(#remember, #terms)
+  label
+  div
+  :is(#remember_me, #term):checked::after {
   content: url('data:image/svg+xml; utf8, <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M20.285 2l-11.285 11.567-5.286-5.011-3.714 3.716 9 8.728 15-15.285z"/></svg>');
   display: block;
   position: absolute;

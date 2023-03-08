@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <form action="" class="form-container">
+    <form method="POST" action="api/v1/auth/login" class="form-container">
       <h2 class="form-header">Sign In</h2>
       <fieldset class="container">
         <label for="username" class="wrapper">
@@ -18,6 +18,7 @@
             id="username"
             name="username"
             placeholder="Username"
+            required
           />
         </label>
         <label for="password" class="wrapper">
@@ -28,6 +29,7 @@
               id="password"
               name="password"
               placeholder="abc123"
+              required
             />
           </div>
           <button type="button" id="show-pass">
@@ -35,12 +37,12 @@
           </button>
         </label>
         <div id="remember">
-          <label for="remember-me">
+          <label for="remember_me">
             <div>
-              <input type="checkbox" name="remember-me" id="remember-me" />
+              <input type="checkbox" name="remember_me" id="remember_me" />
               <p>Remember Me</p>
             </div>
-            <p>Forgot Password?</p>
+            <a href="/">Forgot Password?</a>
           </label>
         </div>
       </fieldset>
@@ -55,7 +57,9 @@
         <a href="/"><i class="fa-brands fa-square-google-plus"></i></a>
         <a href="/"><i class="fa-brands fa-square-twitter"></i></a>
       </div>
-      <p>Don't Have An Account? <a href="/">Create New One</a></p>
+      <p>
+        Don't Have An Account? <a href="/createAccount.html">Create New One</a>
+      </p>
     </form>
 
     <script
