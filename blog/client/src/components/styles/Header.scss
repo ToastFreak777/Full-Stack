@@ -1,0 +1,14 @@
+.bg-steel {
+  background-color: hsl(250, 30%, 50%);
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+
+  &.nav-link:hover {
+    color: #fff;
+  }
+  &.nav-link:active {
+    font-weight: 500;
+  }
+}
