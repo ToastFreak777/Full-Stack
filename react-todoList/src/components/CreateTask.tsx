@@ -7,7 +7,7 @@ import "./CreateTask.styles.css";
 import { TodoContext } from "../Context";
 
 const CreateTask = () => {
-  const { setTasks, input, setInput } = useContext(TodoContext);
+  const { createTask, input, setInput, updateFilter } = useContext(TodoContext);
 
   return (
     <form>
@@ -23,26 +23,17 @@ const CreateTask = () => {
         <button
           onClick={(e) => {
             e.preventDefault();
-            if (input !== "") {
-              setTasks((prev) => [
-                ...prev,
-                {
-                  title: input,
-                  completed: false,
-                },
-              ]);
-              setInput("");
-            }
+            createTask({ title: input, completed: false });
           }}
         >
           <AiFillPlusSquare className="plus" />
         </button>
       </label>
       <div>
-        <select>
-          <option>All</option>
-          <option>Completed</option>
-          <option>Ongoing</option>
+        <select onChange={(e) => updateFilter(e.target.value)}>
+          <option value="">All</option>
+          <option value="true">Completed</option>
+          <option value="false">Ongoing</option>
         </select>
       </div>
     </form>

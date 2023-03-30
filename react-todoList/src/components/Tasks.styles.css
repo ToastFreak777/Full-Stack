@@ -9,7 +9,7 @@
   margin: 10px 0;
   padding: 0 5px;
   background: white;
-  min-height: 50px;
+  min-height: 70px;
 }
 
 .wrapper p {
@@ -61,4 +61,13 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+}
+
+.updater {
+  border: none;
+  font-size: 1.3em;
+}
+
+.updater:focus {
+  outline: none;
 }
