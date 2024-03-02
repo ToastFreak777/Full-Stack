@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateUser = exports.loginUser = exports.createUser = void 0;
+exports.loginUser = exports.createUser = void 0;
 const user_1 = __importDefault(require("../models/user"));
 const http_status_codes_1 = require("http-status-codes");
 require("colors");
@@ -35,17 +35,12 @@ const loginUser = async (req, res) => {
         .json({ token, username: user.username, success: true });
 };
 exports.loginUser = loginUser;
-const updateUser = async (req, res) => {
-    if (!req.body)
-        throw new BadRequest_1.default("No data provided to update user");
-    const usernameTaken = await user_1.default.findOne({ username: req.body.username });
-    if (usernameTaken)
-        throw new Error("Username already exists");
-    const emailTaken = await user_1.default.findOne({ email: req.body.email });
-    if (emailTaken)
-        throw new Error("Email already exists");
-    // use id to get user from server and update
-    res.status(http_status_codes_1.StatusCodes.OK);
-    // .json({ username: user.username, id: user._id, success: true });
-};
-exports.updateUser = updateUser;
+// export const updateUser = async (req: any, res: any) => {
+//   if (!req.body) throw new BadRequest("No data provided to update user");
+//   const usernameTaken = await User.findOne({ username: req.body.username });
+//   if (usernameTaken) throw new Error("Username already exists");
+//   const emailTaken = await User.findOne({ email: req.body.email });
+//   if (emailTaken) throw new Error("Email already exists");
+//   res.status(StatusCodes.OK);
+// .json({ username: user.username, id: user._id, success: true });
+// };
